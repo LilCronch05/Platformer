@@ -3,7 +3,6 @@ using System.Collections;
 
 public class HeroKnight : MonoBehaviour 
 {
-    //[SerializeField] int        health = 10;
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
     [SerializeField] float      m_rollForce = 6.0f;
@@ -26,8 +25,6 @@ public class HeroKnight : MonoBehaviour
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
-    private int m_attackMask;
-    private object m_attackDamage = 5;
 
 
     // Use this for initialization
@@ -195,22 +192,4 @@ public class HeroKnight : MonoBehaviour
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
     }
-
-    void Attack()
-    {
-        // Create a vector at the center of our character in diraction of where we are facing.
-        Vector2 offset = new Vector2(0.5f * m_facingDirection, 0.0f);
-        Vector2 pos = transform.position;
-        pos += offset;
-
-        // Cast a circle forward to check for enemies
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(pos, 0.5f, m_attackMask);
-
-        // Damage all enemies that we found
-        foreach (Collider2D c in colliders)
-        {
-            Debug.Log("Enemy hit!");
-            c.SendMessageUpwards("Damage", m_attackDamage);
-    }
-}
 }

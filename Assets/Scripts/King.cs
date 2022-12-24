@@ -6,7 +6,8 @@ public class King : MonoBehaviour
 {
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
-    //[SerializeField] int        health = 10;
+    public int                  maxHealth = 100;
+    private int                 currentHealth;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -121,5 +122,20 @@ public class King : MonoBehaviour
                 if(m_delayToIdle < 0)
                     m_animator.SetInteger("AnimState", 0);
         }
+    }
+
+    //Called when hurt
+    public void ApplyDamage(int damage) 
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        { 
+            m_animator.SetTrigger("Death");
+        }
+        else
+        {
+            m_animator.SetTrigger("Hurt");
+        }
+            
     }
 }

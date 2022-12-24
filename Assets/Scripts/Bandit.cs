@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bandit : MonoBehaviour {
-
+public class Bandit : MonoBehaviour
+{
+    public int                  maxHealth = 100;
+    private int                 currentHealth;
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;
-    [SerializeField] int        health = 10;
-
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
@@ -20,6 +20,7 @@ public class Bandit : MonoBehaviour {
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
+        currentHealth = maxHealth;
     }
 	
 	// Update is called once per frame
@@ -104,14 +105,19 @@ public class Bandit : MonoBehaviour {
             m_animator.SetInteger("AnimState", 0);
     }
 
-    //Called when the player is hurt
-    public void ApplyDamage(int damage) {
-        health -= damage;
-        if (health <= 0.0f) {
+    //Called when hurt
+    public void ApplyDamage(int damage) 
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        { 
             m_animator.SetTrigger("Death");
             m_isDead = true;
         }
         else
+        {
             m_animator.SetTrigger("Hurt");
+        }
+            
     }
 }
