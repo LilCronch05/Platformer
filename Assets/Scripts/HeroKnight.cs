@@ -75,8 +75,7 @@ public class HeroKnight : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
             m_facingDirection = 1;
-        }
-            
+        }  
         else if (inputX < 0)
         {
             GetComponent<SpriteRenderer>().flipX = true;

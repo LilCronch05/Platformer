@@ -29,6 +29,7 @@ public class King : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        /*
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
 
@@ -74,8 +75,9 @@ public class King : MonoBehaviour
             
         //Hurt
         else if (Input.GetKeyDown("q"))
+        {
             m_animator.SetTrigger("Hurt");
-
+        }
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f)
         {
@@ -83,11 +85,14 @@ public class King : MonoBehaviour
 
             // Loop back to one after third attack
             if (m_currentAttack > 3)
+            {
                 m_currentAttack = 1;
-
+            }
             // Reset Attack combo if time since last attack is too large
             if (m_timeSinceAttack > 1.0f)
+            {
                 m_currentAttack = 1;
+            }
 
             // Call one of three attack animations "Attack1", "Attack2", "Attack3"
             m_animator.SetTrigger("Attack" + m_currentAttack);
@@ -119,9 +124,14 @@ public class King : MonoBehaviour
         {
             // Prevents flickering transitions to idle
             m_delayToIdle -= Time.deltaTime;
+            {
                 if(m_delayToIdle < 0)
+                {
                     m_animator.SetInteger("AnimState", 0);
+                }
+            }
         }
+        */
     }
 
     //Called when hurt

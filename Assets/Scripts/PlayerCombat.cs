@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public float                attackRange = 0.5f;
     public Transform            attackSensor;
+    public float                attackRange = 0.5f;
     public LayerMask            attackMask;
     public int                  attackDamage = 5;
 
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Attack();
+        }
+    }
+    
     void Attack()
     {
         // Cast a circle forward to check for enemies
@@ -19,7 +27,6 @@ public class PlayerCombat : MonoBehaviour
         {
             Debug.Log("Enemy hit!");
             enemy.GetComponent<Bandit>().ApplyDamage(attackDamage);
-            enemy.GetComponent<King>().ApplyDamage(attackDamage);
         }
     }
 
