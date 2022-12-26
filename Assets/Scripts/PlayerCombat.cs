@@ -5,15 +5,21 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Transform            attackSensor;
-    public float                attackRange = 0.5f;
     public LayerMask            attackMask;
-    public int                  attackDamage = 5;
+    public float                attackRange = 0.5f;
+    public int                  attackDamage = 10;
+    public float                attackRate = 1f;
+    float                       nextAttackTime = 0f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
     
