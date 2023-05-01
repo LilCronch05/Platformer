@@ -152,8 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4eb1c37a94dde24487b8c7120ef6813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Player: {fileID: 5463559771233033426}
-  m_PlayerCamera: {fileID: 1846713082}
 --- !u!4 &367578268
 Transform:
   m_ObjectHideFlags: 0
@@ -558,6 +556,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7553371814475239557}
+  - component: {fileID: 8933429204834106001}
   - component: {fileID: 7030786081982189380}
   - component: {fileID: 8933429204834105999}
   - component: {fileID: 4092105928879372405}
@@ -811,6 +810,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &8933429204834106001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463559771233033426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32552c1a6bec04498070e3d1e696241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerCamera: {fileID: 1846713082}
+  spawnLocation: {x: -45.43, y: 0.95, z: 0}
+  currentScene: Zone1
 --- !u!1 &9100203159962206861
 GameObject:
   m_ObjectHideFlags: 0
