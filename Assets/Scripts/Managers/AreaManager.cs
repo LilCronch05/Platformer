@@ -22,10 +22,4 @@ public class AreaManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.transform.position = m_PlayerSpawnPoint.position;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -6,11 +6,6 @@ public class CameraMover : MonoBehaviour
 {
     public GameObject player;
     private Vector2 player_prev_position;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
