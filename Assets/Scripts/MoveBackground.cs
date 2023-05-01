@@ -5,8 +5,10 @@ using UnityEngine;
 public class MoveBackground : MonoBehaviour
 {
     private float length, startPos;
+    [SerializeField]
     private GameObject cam;
-    [SerializeField] private float parallaxEffect;
+    [SerializeField]
+    private float parallaxEffect;
 
     // Start is called before the first frame update
     void Start()

@@ -15,7 +15,7 @@ public class CameraMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(player.transform.position, transform.position) > 0.0f)
+        if (Vector2.Distance(player.transform.position, transform.position) != 0.0f)
          {
              Vector2 delta_position;
              delta_position = (Vector2) player.transform.position - player_prev_position;
