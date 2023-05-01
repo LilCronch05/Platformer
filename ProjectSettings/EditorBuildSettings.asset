@@ -8,4 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 9d037b31ddec3a444b0db50bef4fb4df
+  - enabled: 1
+    path: Assets/Scenes/Zone2.unity
+    guid: e167caa2ea5aa8c45a12e0bc94c7c14e
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 0a49a51cfaf688e4f8e7883c52b24f91, type: 2}
