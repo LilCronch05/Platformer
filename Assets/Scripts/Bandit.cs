@@ -18,9 +18,7 @@ public class Bandit : MonoBehaviour
 
     // Use this for initialization
     void Start ()
-    {
-        Gizmos.color = Color.red;
-        
+    {       
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
