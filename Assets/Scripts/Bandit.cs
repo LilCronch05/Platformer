@@ -10,6 +10,7 @@ public class Bandit : MonoBehaviour
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
+    private RaycastHit2D        m_PlayerSensor;
 
     private bool                m_grounded = false;
     private bool                m_combatIdle = false;
@@ -18,6 +19,8 @@ public class Bandit : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        Gizmos.color = Color.red;
+        
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
@@ -27,6 +30,15 @@ public class Bandit : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (m_PlayerSensor.collider != null)
+        {
+            if (m_PlayerSensor.collider.tag == "Player")
+            {
+                //move towards player
+                transform.position = Vector2.MoveTowards(transform.position, m_PlayerSensor.collider.transform.position, m_speed * Time.deltaTime);
+            }
+        }
+
         /*
         //Check if character just landed on the ground
         if (!m_grounded && m_groundSensor.State())

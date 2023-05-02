@@ -34,8 +34,6 @@ public class AreaLoad : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        PlayerInfo.piInstance.currentScene = SceneManager.GetActiveScene().name;
-
         if(other.tag == "Player")
         {
             m_PlayerInZone = true;
