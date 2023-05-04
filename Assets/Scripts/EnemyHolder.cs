@@ -26,25 +26,27 @@ public class EnemyHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if ((m_NumberOfEnemiesTotal > 0) && (m_NumberOfEnemiesSpawned < m_NumberOfEnemiesTotal))
-        // {
-        //     StartCoroutine(SpawnEnemies());
-        //     m_NumberOfEnemiesSpawned++;
-        // }
-        // else
-        // {
-        //     StopCoroutine(SpawnEnemies());
-        // }
+        if (m_EnemyPrefab == null)
+        {
+            Debug.Log("Enemy is dead");
+        }
+
+        if ((m_NumberOfEnemiesSpawned < m_NumberOfEnemiesAtOnce))
+        {
+            StartCoroutine(SpawnEnemy());  
+        }
+
+        if (m_NumberOfEnemiesSpawned == m_NumberOfEnemiesTotal)
+        {
+            StopCoroutine(SpawnEnemy());
+        }
     }
 
-    IEnumerator SpawnEnemies()
+    IEnumerator SpawnEnemy()
     {
-        for (int i = 0; i < m_NumberOfEnemiesSpawned; i++)
-        {
-            GameObject enemy = Instantiate(m_EnemyPrefab, m_EnemySpawnPoint.transform.position, Quaternion.identity);
-            enemy.transform.parent = gameObject.transform;
-
-            yield return new WaitForSeconds(m_TimeBetweenSpawns);
-        }
+        GameObject enemy = Instantiate(m_EnemyPrefab, m_EnemySpawnPoint.transform.position, Quaternion.identity);
+        enemy.transform.parent = gameObject.transform;
+        m_NumberOfEnemiesSpawned++;
+        yield return new WaitForSeconds(m_TimeBetweenSpawns);
     }
 }

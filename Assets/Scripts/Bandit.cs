@@ -141,6 +141,8 @@ public class Bandit : MonoBehaviour
             //Disable enemy
             this.enabled = false;
             m_body2d.simulated = false;
+            
+            Destroy(gameObject, 2.5f);
         }  
     }
 }
