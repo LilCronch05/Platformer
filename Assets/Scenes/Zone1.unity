@@ -9564,9 +9564,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1175272093}
-  - component: {fileID: 1175272094}
   m_Layer: 0
-  m_Name: EnemySpawn
+  m_Name: LightBanditSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9587,24 +9586,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1175272094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175272092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd8fdf99e8f70fa4281211fb43232604, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EnemyPrefab: {fileID: 1689866831511430, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
-  m_EnemySpawnPoint: {fileID: 1175272092}
-  m_NumberOfEnemiesTotal: 15
-  m_NumberOfEnemiesAtOnce: 5
-  m_NumberOfEnemiesSpawned: 0
-  m_TimeBetweenSpawns: 2
 --- !u!1 &1185652616
 GameObject:
   m_ObjectHideFlags: 0
@@ -13448,6 +13429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2062503325}
   - component: {fileID: 2062503324}
+  - component: {fileID: 2062503326}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -13483,6 +13465,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2062503326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062503323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd8fdf99e8f70fa4281211fb43232604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EnemyPrefab: {fileID: 1689866831511430, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
+  m_EnemySpawnPoint: {fileID: 1175272092}
+  m_NumberOfEnemiesSpawned: 15
+  m_NumberOfEnemiesTotal: 15
+  m_NumberOfEnemiesAtOnce: 5
+  m_TimeBetweenSpawns: 1
 --- !u!1 &2071486062
 GameObject:
   m_ObjectHideFlags: 0

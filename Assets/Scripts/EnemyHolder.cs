@@ -9,44 +9,37 @@ public class EnemyHolder : MonoBehaviour
     [SerializeField]
     private GameObject m_EnemySpawnPoint;
     [SerializeField]
+    [Range(0, 20)]
+    private int m_NumberOfEnemiesSpawned;
+    [SerializeField]
     private int m_NumberOfEnemiesTotal;
     [SerializeField]
     private int m_NumberOfEnemiesAtOnce;
+
     [SerializeField]
-    private int m_NumberOfEnemiesSpawned;
-    [SerializeField]
-    private float m_TimeBetweenSpawns = 1.0f;
+    private float m_TimeBetweenSpawns;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        StartCoroutine(SpawnEnemy(m_NumberOfEnemiesSpawned, m_TimeBetweenSpawns));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (m_EnemyPrefab == null)
-        {
-            Debug.Log("Enemy is dead");
-        }
-
-        if ((m_NumberOfEnemiesSpawned < m_NumberOfEnemiesAtOnce))
-        {
-            StartCoroutine(SpawnEnemy());  
-        }
-
-        if (m_NumberOfEnemiesSpawned == m_NumberOfEnemiesTotal)
-        {
-            StopCoroutine(SpawnEnemy());
-        }
+        
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemy(int qty, float spwnRte)
     {
-        GameObject enemy = Instantiate(m_EnemyPrefab, m_EnemySpawnPoint.transform.position, Quaternion.identity);
-        enemy.transform.parent = gameObject.transform;
-        m_NumberOfEnemiesSpawned++;
-        yield return new WaitForSeconds(m_TimeBetweenSpawns);
+        for (int i = 0; i < qty; i++)
+        {
+            GameObject enemy = Instantiate(m_EnemyPrefab, m_EnemySpawnPoint.transform.position, Quaternion.identity);
+            enemy.gameObject.transform.SetParent(m_EnemySpawnPoint.transform);
+            enemy.transform.position = m_EnemySpawnPoint.transform.position;
+            yield return new WaitForSeconds(spwnRte);
+        }
+        yield return null;
     }
 }
