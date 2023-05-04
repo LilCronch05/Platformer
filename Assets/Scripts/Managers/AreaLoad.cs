@@ -39,4 +39,13 @@ public class AreaLoad : MonoBehaviour
             m_PlayerInZone = true;
         }
     }
+
+    void OnTriggerExit2D (Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            m_PlayerInZone = false;
+            m_InteractText.enabled = false;
+        }
+    }
 }

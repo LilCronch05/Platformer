@@ -26,19 +26,24 @@ public class EnemyHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((m_NumberOfEnemiesTotal > 0) && (m_NumberOfEnemiesSpawned < m_NumberOfEnemiesTotal))
-        {
-            StartCoroutine(SpawnEnemies());
-        }
+        // if ((m_NumberOfEnemiesTotal > 0) && (m_NumberOfEnemiesSpawned < m_NumberOfEnemiesTotal))
+        // {
+        //     StartCoroutine(SpawnEnemies());
+        //     m_NumberOfEnemiesSpawned++;
+        // }
+        // else
+        // {
+        //     StopCoroutine(SpawnEnemies());
+        // }
     }
 
     IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < m_NumberOfEnemiesAtOnce; i++)
+        for (int i = 0; i < m_NumberOfEnemiesSpawned; i++)
         {
             GameObject enemy = Instantiate(m_EnemyPrefab, m_EnemySpawnPoint.transform.position, Quaternion.identity);
             enemy.transform.parent = gameObject.transform;
-            m_NumberOfEnemiesSpawned++;
+
             yield return new WaitForSeconds(m_TimeBetweenSpawns);
         }
     }
