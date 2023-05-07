@@ -10,7 +10,7 @@ public class Bandit : MonoBehaviour
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_Bandit       m_groundSensor;
-    private RaycastHit2D        m_PlayerSensor;
+    private GameObject          m_Target;
 
     private bool                m_grounded = false;
     private bool                m_combatIdle = false;
@@ -18,7 +18,8 @@ public class Bandit : MonoBehaviour
 
     // Use this for initialization
     void Start ()
-    {       
+    {
+        m_Target = GameObject.FindGameObjectWithTag("Player");
         m_animator = GetComponent<Animator>();
         m_body2d = GetComponent<Rigidbody2D>();
         m_groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_Bandit>();
@@ -28,13 +29,21 @@ public class Bandit : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (m_PlayerSensor.collider != null)
+        //chase player
+        if (m_Target.transform.position.x < transform.position.x)
         {
-            if (m_PlayerSensor.collider.tag == "Player")
-            {
-                //move towards player
-                transform.position = Vector2.MoveTowards(transform.position, m_PlayerSensor.collider.transform.position, m_speed * Time.deltaTime);
-            }
+            GetComponent<SpriteRenderer>().flipX = false;
+            m_body2d.velocity = new Vector2(-m_speed, m_body2d.velocity.y);
+        }
+        else if (m_Target.transform.position.x > transform.position.x)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            m_body2d.velocity = new Vector2(m_speed, m_body2d.velocity.y);
+        }
+
+        if (m_body2d.velocity.x != 0)
+        {
+            m_animator.SetInteger("AnimState", 2);
         }
 
         /*
@@ -109,10 +118,7 @@ public class Bandit : MonoBehaviour
         }
 
         //Run
-        else if (Mathf.Abs(inputX) > Mathf.Epsilon)
-        {
-            m_animator.SetInteger("AnimState", 2);
-        }
+        
         //Combat Idle
         else if (m_combatIdle)
         {
