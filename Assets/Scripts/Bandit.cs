@@ -4,6 +4,7 @@ using System.Collections;
 public class Bandit : MonoBehaviour
 {
     public int                  maxHealth = 100;
+    [SerializeField]
     private int                 currentHealth;
     [SerializeField] float      m_speed = 4.0f;
     [SerializeField] float      m_jumpForce = 7.5f;

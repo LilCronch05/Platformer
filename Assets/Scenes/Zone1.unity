@@ -16939,7 +16939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EnemyPrefab: {fileID: 1689866831511430, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
   m_EnemySpawnPoint: {fileID: 1175272092}
-  m_NumberOfEnemiesSpawned: 15
+  m_NumberOfEnemiesSpawned: 1
   m_NumberOfEnemiesTotal: 15
   m_NumberOfEnemiesAtOnce: 5
   m_TimeBetweenSpawns: 5
