@@ -145,7 +145,7 @@ public class HeroKnight : MonoBehaviour
         {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
-            m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
+            m_body2d.velocity = new Vector2((m_facingDirection * m_rollForce) + 5, m_body2d.velocity.y);
         }
             
 
