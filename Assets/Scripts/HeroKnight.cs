@@ -74,11 +74,13 @@ public class HeroKnight : MonoBehaviour
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
         {
+            GetComponent<PlayerCombat>().attackSensor.localPosition = new Vector3(0.75f, 0.75f, 0.0f);
             GetComponent<SpriteRenderer>().flipX = false;
             m_facingDirection = 1;
         }  
         else if (inputX < 0)
         {
+            GetComponent<PlayerCombat>().attackSensor.localPosition = new Vector3(-0.75f, 0.75f, 0.0f);
             GetComponent<SpriteRenderer>().flipX = true;
             m_facingDirection = -1;
         }
