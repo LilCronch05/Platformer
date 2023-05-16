@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8369383531756756906}
   - component: {fileID: 8369383531756756907}
   m_Layer: 0
-  m_Name: TX Village Props Banner
+  m_Name: Banner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e2a7255f011495047a05eb59adabd49a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7950670298016116274}
   - component: {fileID: 4895714900813831759}
   m_Layer: 0
-  m_Name: TX Village Props Banner Pillar
+  m_Name: Pillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e2a7255f011495047a05eb59adabd49a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
