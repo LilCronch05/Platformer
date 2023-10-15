@@ -13024,6 +13024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1175272093}
+  - component: {fileID: 1175272094}
   m_Layer: 0
   m_Name: LightBanditSpawn
   m_TagString: Untagged
@@ -13046,6 +13047,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1175272094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175272092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60160dde31967e14ba9b4f26b512b600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLevel: 0
+  EasyEnemy: {fileID: 1689866831511430, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
+  MediumEnemy: {fileID: 1463392086428580, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
+  HardEnemy: {fileID: 0}
+  BossEnemy: {fileID: 0}
+  totalEnemy: 1
+  Spawn: 1
+  spawnType: 2
+  waveTimer: 30
+  totalWaves: 5
 --- !u!1 &1185652616
 GameObject:
   m_ObjectHideFlags: 0
@@ -16932,7 +16955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062503323}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd8fdf99e8f70fa4281211fb43232604, type: 3}
   m_Name: 
