@@ -81,6 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4588935210562790}
   - component: {fileID: 114999745408315450}
+  - component: {fileID: -4386499137218416087}
   - component: {fileID: 95734438044755836}
   - component: {fileID: 212652212501150786}
   - component: {fileID: 50959880312528810}
@@ -122,8 +123,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 150
+  currentHealth: 0
   m_speed: 3
   m_jumpForce: 7.5
+--- !u!114 &-4386499137218416087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463392086428580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e78efd4865a0974888af887ca85223a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPointA: {fileID: 0}
+  patrolPointB: {fileID: 0}
+  moveSpeed: 2
+  chaseDistance: 5
 --- !u!95 &95734438044755836
 Animator:
   serializedVersion: 5
