@@ -49,5 +49,8 @@ public class Bandit : MonoBehaviour
         //Disable enemy
         this.enabled = false;
         Destroy(gameObject, 2.5f);
+
+        //Stop movement
+        m_movementScript.enabled = false;
     }
 }
